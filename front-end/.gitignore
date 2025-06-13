@@ -1,0 +1,4 @@
+# Cannot upload these files they will be really big
+node_modules/
+dist/
+.vite/

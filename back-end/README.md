@@ -8,6 +8,10 @@ This is the backend Express server for the Digital Service Intake Form Proof of 
 
 ```bash
 npm install
+```
 
-npm start
+### 2. Run Application
+
+```bash
+npm run dev
 ```
