@@ -9,6 +9,7 @@
     },
     "dependencies": {
         "@ongov/ontario-design-system-complete-styles": "^5.0.0",
+        "@ongov/ontario-design-system-component-library": "^5.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },

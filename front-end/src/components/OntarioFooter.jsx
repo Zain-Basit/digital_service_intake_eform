@@ -1,12 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const OntarioFooter = () => {
-  // useEffect(() => {
-  //   // Ensure the Ontario Footer Web Component is loaded
-  //   import('@ontario-digital-service/ontario-design-system-components/loader').then(loader => {
-  //     loader.defineCustomElements(window);
-  //   });
-  // }, []);
 
   return (
     <ontario-footer
