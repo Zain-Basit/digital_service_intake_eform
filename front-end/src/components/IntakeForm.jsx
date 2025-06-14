@@ -10,7 +10,8 @@ const IntakeForm = () => {
     company: '',
     website: '',
     description: '',
-    services: []
+    services: [],
+    serviceDetails: {}
   });
 
   const [errors, setErrors] = useState({});
@@ -35,7 +36,15 @@ const IntakeForm = () => {
         const newServices = checked
           ? [...prevData.services, value]
           : prevData.services.filter(service => service !== value);
-        return { ...prevData, services: newServices };
+
+        const newServiceDetails = { ...prevData.serviceDetails };
+        if (!checked) delete newServiceDetails[value];
+
+        return {
+          ...prevData,
+          services: newServices,
+          serviceDetails: newServiceDetails
+        };
       });
     } else {
       setFormData(prevData => ({
@@ -43,6 +52,16 @@ const IntakeForm = () => {
         [name]: value
       }));
     }
+  };
+
+  const handleServiceDetailChange = (service, value) => {
+    setFormData(prevData => ({
+      ...prevData,
+      serviceDetails: {
+        ...prevData.serviceDetails,
+        [service]: value
+      }
+    }));
   };
 
   const validate = () => {
@@ -105,7 +124,8 @@ const IntakeForm = () => {
           company: '',
           website: '',
           description: '',
-          services: []
+          services: [],
+          serviceDetails: {}
         });
       } else {
         setStatusMessage('Error submitting form.');
@@ -232,6 +252,21 @@ const IntakeForm = () => {
                   />{' '}
                   {service}
                 </label>
+
+                {formData.services.includes(service) && (
+                  <div className="ontario-form-group" style={{ marginTop: '8px' }}>
+                    <label htmlFor={`serviceDetail-${service}`} className="ontario-label">
+                      Please describe your need for {service}:
+                    </label>
+                    <textarea
+                      id={`serviceDetail-${service}`}
+                      className="ontario-input"
+                      rows="3"
+                      value={formData.serviceDetails[service] || ''}
+                      onChange={(e) => handleServiceDetailChange(service, e.target.value)}
+                    ></textarea>
+                  </div>
+                )}
               </div>
             ))}
           </div>
