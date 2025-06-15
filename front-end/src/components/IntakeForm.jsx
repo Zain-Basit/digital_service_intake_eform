@@ -166,6 +166,7 @@ const IntakeForm = () => {
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
+      setStatusMessage('You have missing required fields.')
       return;
     }
 
@@ -193,6 +194,7 @@ const IntakeForm = () => {
           serviceDetails: {},
           stakeholders: [],
         });
+        setNumStakeholders(0);
       } else {
         setStatusMessage("Error submitting form.");
       }
