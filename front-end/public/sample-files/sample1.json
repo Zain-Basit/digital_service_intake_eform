@@ -1,14 +1,19 @@
 {
-  "firstName": "Jane",
-  "lastName": "Doe",
-  "email": "jane.doe@example.com",
-  "phone": "+1 (416) 555-1234",
-  "address": "123 Queen Street, Toronto, ON",
-  "company": "Doe Innovations",
-  "website": "https://www.doeinnovations.ca",
-  "description": "We are looking for help modernizing our website.",
-  "services": ["Web Development"],
+  "firstName": "Ali",
+  "lastName": "Khan",
+  "email": "ali.khan@example.com",
+  "phone": "+1 123-456-7890",
+  "address": "123 Maple Street, Toronto, ON",
+  "company": "TechNova Inc.",
+  "website": "https://technova.ca",
+  "description": "We need help with a full digital transformation.",
+  "services": ["Web Development", "Digital Strategy"],
   "serviceDetails": {
-    "Web Development": "We want to migrate to a modern stack like React or Vue."
-  }
+    "Web Development": "Need a custom React-based frontend.",
+    "Digital Strategy": "Looking to align digital with business objectives."
+  },
+  "stakeholders": [
+    {"name": "Zara Patel", "role": "CTO", "email": "zara@technova.ca"},
+    {"name": "John Lee", "role": "Project Manager", "email": "john@technova.ca"}
+  ]
 }

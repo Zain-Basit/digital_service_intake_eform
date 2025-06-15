@@ -1,16 +1,18 @@
 {
-  "firstName": "Ali",
-  "lastName": "Khan",
-  "email": "ali.khan@startuphub.io",
-  "phone": "+1 647-888-9876",
-  "address": "456 King Street, Mississauga, ON",
-  "company": "StartupHub",
-  "website": "http://startuphub.io",
-  "description": "We need a complete branding overhaul and SEO consultation.",
-  "services": ["Branding", "SEO Optimization", "Content Writing"],
+  "firstName": "Sarah",
+  "lastName": "Nguyen",
+  "email": "sarah.nguyen@creativehub.com",
+  "phone": "416-555-1010",
+  "address": "Unit 5, 456 King St. W, Toronto, ON",
+  "company": "Creative Hub",
+  "website": "http://creativehub.com",
+  "description": "Require UX/UI overhaul and brand refresh.",
+  "services": ["UX/UI Design", "Branding"],
   "serviceDetails": {
-    "Branding": "Logo, brand colours, and new brand messaging.",
-    "SEO Optimization": "Help with technical SEO and content structure.",
-    "Content Writing": "We need blog posts and landing pages."
-  }
+    "UX/UI Design": "Modernize the app interface.",
+    "Branding": "New logo, colour palette, and typography."
+  },
+  "stakeholders": [
+    {"name": "Emma Brooks", "role": "Creative Director", "email": "emma@creativehub.com"}
+  ]
 }

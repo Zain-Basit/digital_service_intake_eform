@@ -1,14 +1,16 @@
 {
-  "firstName": "Michael",
-  "lastName": "Nguyen",
-  "email": "m.nguyen@eduplus.org",
-  "phone": "905-777-9999",
-  "address": "789 College Ave, Hamilton, ON",
-  "company": "EduPlus",
-  "website": "",
-  "description": "Accessibility audit needed for our LMS platform.",
-  "services": ["Accessibility Review"],
+  "firstName": "David",
+  "lastName": "Chen",
+  "email": "david.chen@startsmart.ai",
+  "phone": "+1 647-789-2233",
+  "address": "789 Innovation Dr, Markham, ON",
+  "company": "StartSmart AI",
+  "website": "https://startsmart.ai",
+  "description": "Content writing and SEO support needed for new product launch.",
+  "services": ["Content Writing", "SEO Optimization"],
   "serviceDetails": {
-    "Accessibility Review": "Ensure our system meets WCAG 2.1 AA standards."
-  }
+    "Content Writing": "Blog series for AI onboarding.",
+    "SEO Optimization": "Boost search visibility pre-launch."
+  },
+  "stakeholders": []
 }

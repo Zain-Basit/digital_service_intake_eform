@@ -11,9 +11,11 @@ const IntakeForm = () => {
     website: '',
     description: '',
     services: [],
-    serviceDetails: {}
+    serviceDetails: {},
+    stakeholders: []
   });
 
+    const [numStakeholders, setNumStakeholders] = useState(0);
   const [errors, setErrors] = useState({});
   const [statusMessage, setStatusMessage] = useState('');
 
@@ -87,6 +89,20 @@ const IntakeForm = () => {
     reader.readAsText(file);
   };
 
+  
+  const handleStakeholderChange = (index, field, value) => {
+    const updated = [...formData.stakeholders];
+    updated[index] = { ...updated[index], [field]: value };
+    setFormData(prev => ({ ...prev, stakeholders: updated }));
+  };
+
+  const handleNumStakeholdersChange = (e) => {
+    const count = parseInt(e.target.value, 10);
+    setNumStakeholders(count);
+    const stakeholdersArray = Array.from({ length: count }, (_, i) => formData.stakeholders?.[i] || { name: '', role: '', email: '' });
+    setFormData(prev => ({ ...prev, stakeholders: stakeholdersArray }));
+  };
+
   const validate = () => {
     const newErrors = {};
 
@@ -114,6 +130,21 @@ const IntakeForm = () => {
 
     if (!formData.services.length) newErrors.services = 'Please select at least one service.';
     if (!formData.description.trim()) newErrors.description = 'Description is required.';
+
+    if (formData.stakeholders.length > 0) {
+      newErrors.stakeholders = [];
+      formData.stakeholders.forEach((s, i) => {
+        const entryErrors = {};
+        if (!s.name?.trim()) entryErrors.name = 'Name is required.';
+        if (!s.role?.trim()) entryErrors.role = 'Role is required.';
+        if (!s.email?.trim()) {
+          entryErrors.email = 'Email is required.';
+        } else if (!/\S+@\S+\.\S+/.test(s.email)) {
+          entryErrors.email = 'Please enter a valid email.';
+        }
+        newErrors.stakeholders[i] = entryErrors;
+      });
+    }
 
     return newErrors;
   };
@@ -148,7 +179,8 @@ const IntakeForm = () => {
           website: '',
           description: '',
           services: [],
-          serviceDetails: {}
+          serviceDetails: {},
+    stakeholders: []
         });
       } else {
         setStatusMessage('Error submitting form.');
@@ -320,6 +352,55 @@ const IntakeForm = () => {
           required
         ></textarea>
       </div>
+
+      
+      <div className="ontario-form-group">
+        <label htmlFor="numStakeholders" className="ontario-label">Number of Stakeholders</label>
+        <input
+          id="numStakeholders"
+          type="number"
+          min="0"
+          className="ontario-input"
+          value={numStakeholders}
+          onChange={handleNumStakeholdersChange}
+        />
+      </div>
+
+      {formData.stakeholders?.map((stakeholder, index) => (
+        <fieldset key={index} className="ontario-form-group">
+          <legend className="ontario-label">Stakeholder {index + 1}</legend>
+          <div className="ontario-form-group">
+            {errors[`stakeholder-${index}-name`] && <div className="ontario-label__message--error">{errors[`stakeholder-${index}-name`]}</div>}
+<label className="ontario-label" htmlFor={`stakeholder-name-${index}`}>Name (required)</label>
+            <input
+              id={`stakeholder-name-${index}`}
+              className="ontario-input"
+              value={stakeholder.name}
+              onChange={e => handleStakeholderChange(index, 'name', e.target.value)}
+            />
+          </div>
+          <div className="ontario-form-group">
+            {errors[`stakeholder-${index}-role`] && <div className="ontario-label__message--error">{errors[`stakeholder-${index}-role`]}</div>}
+<label className="ontario-label" htmlFor={`stakeholder-role-${index}`}>Role (required)</label>
+            <input
+              id={`stakeholder-role-${index}`}
+              className="ontario-input"
+              value={stakeholder.role}
+              onChange={e => handleStakeholderChange(index, 'role', e.target.value)}
+            />
+          </div>
+          <div className="ontario-form-group">
+            {errors[`stakeholder-${index}-email`] && <div className="ontario-label__message--error">{errors[`stakeholder-${index}-email`]}</div>}
+<label className="ontario-label" htmlFor={`stakeholder-email-${index}`}>Email (required)</label>
+            <input
+              id={`stakeholder-email-${index}`}
+              className="ontario-input"
+              value={stakeholder.email}
+              onChange={e => handleStakeholderChange(index, 'email', e.target.value)}
+            />
+          </div>
+        </fieldset>
+      ))}
 
       <button type="submit" className="ontario-button">Submit</button>
       {statusMessage && <p className="ontario-margin-top-16">{statusMessage}</p>}
