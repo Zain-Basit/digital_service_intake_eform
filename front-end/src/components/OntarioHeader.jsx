@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const OntarioHeader = () => {
   return (
@@ -8,7 +8,6 @@ const OntarioHeader = () => {
       logo-link="https://cdn.ontario.ca/ontario-logo--white.svg"
       max-width="full-width"
       heading="Digital Intake Form Application"
-
       heading-url="/"
     ></ontario-header>
   );

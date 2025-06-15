@@ -1,10 +1,10 @@
-@import '@ongov/ontario-design-system-complete-styles/dist/styles/css/compiled/ontario-theme.css';
+@import "@ongov/ontario-design-system-complete-styles/dist/styles/css/compiled/ontario-theme.css";
 
 /* Fallback styling for field error messages, the red text does not seem to be appearing properly */
 .ontario-label__message--error {
-    color: #c71c1c; /* Ontario red */
-    font-weight: bold;
-    display: block;
-    margin-bottom: 4px;
-    font-size: 0.95rem;
+  color: #c71c1c; /* Ontario red */
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
 }

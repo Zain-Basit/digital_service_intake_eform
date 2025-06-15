@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 
 const OntarioFooter = () => {
-
   return (
     <ontario-footer
       language="en"

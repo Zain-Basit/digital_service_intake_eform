@@ -1,8 +1,8 @@
-import React from 'react';
-import OntarioHeader from './components/OntarioHeader.jsx';
-import OntarioFooter from './components/OntarioFooter.jsx';
-import IntakeForm from './components/IntakeForm.jsx';
-import './App.css';
+import React from "react";
+import OntarioHeader from "./components/OntarioHeader.jsx";
+import OntarioFooter from "./components/OntarioFooter.jsx";
+import IntakeForm from "./components/IntakeForm.jsx";
+import "./App.css";
 
 const App = () => {
   return (
