@@ -64,6 +64,29 @@ const IntakeForm = () => {
     }));
   };
 
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const json = JSON.parse(e.target.result);
+        setFormData(prevData => ({
+          ...prevData,
+          ...json,
+          services: Array.isArray(json.services) ? json.services : [],
+          serviceDetails: typeof json.serviceDetails === 'object' ? json.serviceDetails : {}
+        }));
+      } catch (error) {
+        console.error('Invalid JSON file:', error);
+        setStatusMessage('Failed to load JSON: Invalid format.');
+      }
+    };
+
+    reader.readAsText(file);
+  };
+
   const validate = () => {
     const newErrors = {};
 
@@ -138,6 +161,17 @@ const IntakeForm = () => {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
+      <div className="ontario-form-group">
+        <label htmlFor="fileUpload" className="ontario-label">Prefill Form from JSON</label>
+        <input
+          id="fileUpload"
+          type="file"
+          accept=".json"
+          className="ontario-input"
+          onChange={handleFileUpload}
+        />
+      </div>
+
       <div className="ontario-form-group">
         {errors.firstName && <div className="ontario-label__message--error">{errors.firstName}</div>}
         <label htmlFor="firstName" className="ontario-label">First Name</label>
@@ -288,7 +322,6 @@ const IntakeForm = () => {
       </div>
 
       <button type="submit" className="ontario-button">Submit</button>
-
       {statusMessage && <p className="ontario-margin-top-16">{statusMessage}</p>}
     </form>
   );

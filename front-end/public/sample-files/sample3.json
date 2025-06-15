@@ -1,0 +1,14 @@
+{
+  "firstName": "Michael",
+  "lastName": "Nguyen",
+  "email": "m.nguyen@eduplus.org",
+  "phone": "905-777-9999",
+  "address": "789 College Ave, Hamilton, ON",
+  "company": "EduPlus",
+  "website": "",
+  "description": "Accessibility audit needed for our LMS platform.",
+  "services": ["Accessibility Review"],
+  "serviceDetails": {
+    "Accessibility Review": "Ensure our system meets WCAG 2.1 AA standards."
+  }
+}

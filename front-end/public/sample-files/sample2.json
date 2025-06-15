@@ -1,0 +1,16 @@
+{
+  "firstName": "Ali",
+  "lastName": "Khan",
+  "email": "ali.khan@startuphub.io",
+  "phone": "+1 647-888-9876",
+  "address": "456 King Street, Mississauga, ON",
+  "company": "StartupHub",
+  "website": "http://startuphub.io",
+  "description": "We need a complete branding overhaul and SEO consultation.",
+  "services": ["Branding", "SEO Optimization", "Content Writing"],
+  "serviceDetails": {
+    "Branding": "Logo, brand colours, and new brand messaging.",
+    "SEO Optimization": "Help with technical SEO and content structure.",
+    "Content Writing": "We need blog posts and landing pages."
+  }
+}

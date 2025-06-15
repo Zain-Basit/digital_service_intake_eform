@@ -1,0 +1,14 @@
+{
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "jane.doe@example.com",
+  "phone": "+1 (416) 555-1234",
+  "address": "123 Queen Street, Toronto, ON",
+  "company": "Doe Innovations",
+  "website": "https://www.doeinnovations.ca",
+  "description": "We are looking for help modernizing our website.",
+  "services": ["Web Development"],
+  "serviceDetails": {
+    "Web Development": "We want to migrate to a modern stack like React or Vue."
+  }
+}
