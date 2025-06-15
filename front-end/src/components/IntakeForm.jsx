@@ -132,19 +132,17 @@ const IntakeForm = () => {
     if (!formData.description.trim()) newErrors.description = 'Description is required.';
 
     if (formData.stakeholders.length > 0) {
-      newErrors.stakeholders = [];
-      formData.stakeholders.forEach((s, i) => {
-        const entryErrors = {};
-        if (!s.name?.trim()) entryErrors.name = 'Name is required.';
-        if (!s.role?.trim()) entryErrors.role = 'Role is required.';
-        if (!s.email?.trim()) {
-          entryErrors.email = 'Email is required.';
-        } else if (!/\S+@\S+\.\S+/.test(s.email)) {
-          entryErrors.email = 'Please enter a valid email.';
-        }
-        newErrors.stakeholders[i] = entryErrors;
-      });
+  formData.stakeholders.forEach((s, i) => {
+    if (!s.name?.trim()) newErrors[`stakeholder-${i}-name`] = 'Name is required.';
+    if (!s.role?.trim()) newErrors[`stakeholder-${i}-role`] = 'Role is required.';
+    if (!s.email?.trim()) {
+      newErrors[`stakeholder-${i}-email`] = 'Email is required.';
+    } else if (!/\S+@\S+\.\S+/.test(s.email)) {
+      newErrors[`stakeholder-${i}-email`] = 'Please enter a valid email.';
     }
+  });
+}
+
 
     return newErrors;
   };
