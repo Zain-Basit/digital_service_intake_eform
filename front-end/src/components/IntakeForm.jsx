@@ -226,7 +226,7 @@ const IntakeForm = () => {
           </div>
         )}
         <label htmlFor="firstName" className="ontario-label">
-          First Name
+          First Name (required)
         </label>
         <input
           id="firstName"
@@ -244,7 +244,7 @@ const IntakeForm = () => {
           <div className="ontario-label__message--error">{errors.lastName}</div>
         )}
         <label htmlFor="lastName" className="ontario-label">
-          Last Name
+          Last Name (required)
         </label>
         <input
           id="lastName"
@@ -262,7 +262,7 @@ const IntakeForm = () => {
           <div className="ontario-label__message--error">{errors.email}</div>
         )}
         <label htmlFor="email" className="ontario-label">
-          Email
+          Email (required)
         </label>
         <input
           id="email"
@@ -280,7 +280,7 @@ const IntakeForm = () => {
           <div className="ontario-label__message--error">{errors.phone}</div>
         )}
         <label htmlFor="phone" className="ontario-label">
-          Phone Number
+          Phone Number (required)
         </label>
         <input
           id="phone"
@@ -298,7 +298,7 @@ const IntakeForm = () => {
           <div className="ontario-label__message--error">{errors.address}</div>
         )}
         <label htmlFor="address" className="ontario-label">
-          Address
+          Address (required)
         </label>
         <input
           id="address"
@@ -316,7 +316,7 @@ const IntakeForm = () => {
           <div className="ontario-label__message--error">{errors.company}</div>
         )}
         <label htmlFor="company" className="ontario-label">
-          Company
+          Company (required)
         </label>
         <input
           id="company"
@@ -351,7 +351,7 @@ const IntakeForm = () => {
           <div className="ontario-label__message--error">{errors.services}</div>
         )}
         <fieldset className="ontario-fieldset">
-          <legend className="ontario-label">Services Needed</legend>
+          <legend className="ontario-label">Services Needed (minimum 1 required)</legend>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             {servicesOptions.map((service) => (
               <div
@@ -404,7 +404,7 @@ const IntakeForm = () => {
           </div>
         )}
         <label htmlFor="description" className="ontario-label">
-          Description of Request
+          Description of Request (required)
         </label>
         <textarea
           id="description"
